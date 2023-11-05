@@ -56,7 +56,7 @@ constexpr const char* build = __DATE__ "   " __TIME__;
 inline BOOL on_process_attach(HMODULE h_module, LPVOID lp_reserved)
 {
 
-    d3d11::hook_exports();
+    d3d11::hook_exports(h_module);
 
     WRAPPER_ON_PROCESS_ATTACH_GLOBAL_NS(h_module, lp_reserved);
 
@@ -74,6 +74,7 @@ inline BOOL on_process_detach(HMODULE h_module, LPVOID lp_reserved)
 
 inline BOOL on_thread_attach(HMODULE h_module, LPVOID lp_reserved)
 {
+    //d3d11::hook_exports();
     WRAPPER_ON_THREAD_ATTACH_GLOBAL_NS(h_module, lp_reserved);
     return TRUE;
 }

@@ -25,7 +25,7 @@ constexpr const char* func_names[func_count] = { "CreateDirect3D11DeviceFromDXGI
 extern HMODULE chain;
 extern FARPROC functions[func_count];
 
-void hook_exports();
+void hook_exports(HMODULE );
 
 } // namespace d3d11
 
